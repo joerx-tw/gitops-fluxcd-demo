@@ -1,0 +1,25 @@
+runChecks: true
+actions:
+  repo-settings:
+    deleteBranchOnMerge: true
+  branch-protection-settings:
+    branches:
+      - name: main
+        dismissStaleReviews: true
+        numRequiredReviews: 1
+        requireLinearHistory: true
+        requireConversationResolution: true
+        requireBranchUpToDate: true
+        checks:
+          - name: Require all commits to be signed
+            type: tests
+            appId: github-actions
+          - name: terraform_linting
+            type: tests
+            appId: github-actions
+          - name: static_checks
+            type: tests
+            appId: github-actions
+  sync-codeowners:
+    extraWriters:
+      - terraform-machine-users
