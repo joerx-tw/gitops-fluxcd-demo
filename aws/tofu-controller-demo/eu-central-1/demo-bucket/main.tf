@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 terraform {
-  required_version = "~> 1.6.0"
+  required_version = "~> 1.3.9" # Only version supported by TF controller
 
   backend "s3" {
     bucket         = "terraform-upx-tofu-controller-demo-zkk"
