@@ -27,6 +27,7 @@ locals {
   tags = {
     maintainer  = "cloud-foundations"
     environment = "development"
+    managed-by  = "tofu-controller"
   }
 }
 
